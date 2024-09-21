@@ -1,5 +1,11 @@
 import java.util.Scanner;
 
+/*Trabajo presentado por:
+ * Luis José Lemus//192239
+ * Sergio Andres Diaz// 192357
+ * Androw perez//192370
+ */
+
 public class TrabajoEquipo {
     public static void main(String[] args) {
         final double NOTA_APROBATORIA = 3.0;
@@ -35,7 +41,7 @@ public class TrabajoEquipo {
                     }
                 } else {
                     System.out.println("Este valor no es un código válido, por favor añada su código estudiantil.");
-                    scanner.next(); // Limpiamos el buffer para evitar el bucle infinito
+                    scanner.next();
                 }
             }
             scanner.nextLine(); 
@@ -48,12 +54,19 @@ public class TrabajoEquipo {
                 while (!notaValida) {
                     System.out.println("Ingrese la nota " + (j + 1) + ":");
                     if (scanner.hasNextDouble()) {
-                        NotaEstudiantes[i][j] = scanner.nextDouble();
-                        SumaNotas += NotaEstudiantes[i][j];
-                        notaValida = true; // Nota válida
+                       double nota=scanner.nextDouble()
+
+                        if (nota <= 5) {
+                            NotaEstudiantes[i][j] = scanner.nextDouble();
+                            SumaNotas += NotaEstudiantes[i][j];
+                            notaValida = true; // Nota válida
+                        }else
+                        System.out.println("No se puede sacar mas de 5.0 de nota, rectifique su informacion ;) ")
+                    
+                      
                     } else {
-                        System.out.println("Entrada no válida, por favor ingrese un número válido para la nota.");
-                        scanner.next(); // Limpiamos el buffer
+                        System.out.println("ingresa una verdadera nota porfavor");
+                        scanner.next(); 
                     }
                 }
             }
