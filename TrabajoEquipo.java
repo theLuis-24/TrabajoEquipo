@@ -54,14 +54,15 @@ public class TrabajoEquipo {
                 while (!notaValida) {
                     System.out.println("Ingrese la nota " + (j + 1) + ":");
                     if (scanner.hasNextDouble()) {
-                       double nota=scanner.nextDouble()
+    
+                       double nota=scanner.nextDouble();
 
                         if (nota <= 5) {
-                            NotaEstudiantes[i][j] = scanner.nextDouble();
-                            SumaNotas += NotaEstudiantes[i][j];
-                            notaValida = true; // Nota válida
+                            NotaEstudiantes[i][j] = nota; // Asigna la nota leída
+                             SumaNotas += nota;            // Suma la misma nota
+                            notaValida = true;    
                         }else
-                        System.out.println("No se puede sacar mas de 5.0 de nota, rectifique su informacion ;) ")
+                        System.out.println("No se puede sacar mas de 5.0 de nota, rectifique su informacion ;) ");
                     
                       
                     } else {
